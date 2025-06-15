@@ -1,0 +1,44 @@
+body
+{
+
+	background-color: powderblue;
+
+
+}
+h1
+{
+	color: greem;
+	font-family: papyrus;
+	font-size: 45px;
+	text-align: center;
+	border: 3px dotted whitesmoke;
+
+}
+h3
+{
+	color: burgundy;
+	border: 4px dashed green;
+
+}
+p
+{
+	color: blue;
+	font-size: 20px;
+
+}
+table,tr,th, td
+{
+	border: 3px solid beige;
+	border-collapse: collapse;
+
+}
+th
+{
+	background-color: royalblue;
+
+}
+tr:hover
+
+{
+	background-color: pink;
+}

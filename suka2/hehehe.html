@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>heheheh</title>
+  <style>
+    body {
+      background-color: #ffe6f0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+
+    .box {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .accept {
+      background-color: #ff66b2;
+      color: white;
+    }
+
+    .reject {
+      background-color: #red;
+      color: red;
+    }
+
+    #response {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #d6336c;
+    }
+  </style>
+</head>
+<body>
+
+
+  
+
+  <div class="box">
+    <h2>Hey...actually I have something to tell you </h2>
+    <p> Can we get to know each other better? ..</p>
+    <p>Do you feel the same?</p>
+    <button class="accept" onclick="reply('yes')">Accept</button>
+    <button class="reject" onclick="reply('no')">Reject</button>
+    <div id="response"></div>
+  </div>
+
+  <script>
+    function reply(answer) {
+      const response = document.getElementById('response');
+      if (answer === 'yes') {
+        response.textContent = "Thank youu hehehe ";
+      } else {
+        response.textContent = "Aww... it's okay. Thanks for being honest.";
+      }
+    }
+  </script>
+
+</body>
+</html>

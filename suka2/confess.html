@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>I have one questions...</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #ffcccc, #ffe6e6);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 80px;
+      font-size: 3em;
+      color: #d6336c;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin: 20px auto;
+      width: 60%;
+    }
+
+    .confession-box {
+      background: white;
+      padding: 40px;
+      margin: 30px auto;
+      width: 60%;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 2s ease;
+    }
+
+    .btn-group {
+      margin-top: 30px;
+    }
+
+    .reply-btn {
+      background-color: #ff6699;
+      color: white;
+      padding: 12px 25px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .reply-btn:hover {
+      background-color: #e6005c;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: fall 5s linear infinite;
+      opacity: 0.7;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before { top: -10px; left: 0; }
+    .heart::after { left: -10px; top: 0; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fall {
+      0% { top: -10%; left: calc(100% * var(--i)); }
+      100% { top: 110%; left: calc(100% * var(--i)); }
+    }
+
+    #responseMessage {
+      font-size: 1.5em;
+      color: #d6336c;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>I have one question</h1>
+  
+  <div class="confession-box">
+    <<div class="box">
+    <h2>Hey...actually I have something to tell you </h2>
+    <p> Can we get to know each other better? ..</p>
+
+    
+
+    <div class="btn-group">
+      <button class="reply-btn" onclick="reply('accept')">Accept</button>
+      <button class="reply-btn" onclick="reply('reject')">Reject</button>
+    </div>
+
+    <div id="responseMessage"></div>
+  </div>
+
+  <!-- Floating hearts -->
+  <script>
+    for (let i = 0; i < 30; i++) {
+      let heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      heart.style.setProperty('--i', Math.random());
+      document.body.appendChild(heart);
+    }
+
+    function reply(answer) {
+      const response = document.getElementById('responseMessage');
+      if (answer === 'accept') {
+        response.innerHTML = "Thank you, so can we continue to the next stage now? hehe";
+      } else {
+        response.innerHTML = "Oof. That’s okay... I’ll just cry a little and eat ice cream.";
+      }
+    }
+  </script>
+
+</body>
+</html>
