@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Muhammad Aiman</title>
+    <link rel="stylesheet" type="text/css" href="css/style_assigment.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9fb;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .resume-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        header {
+            background-color: #6d597a;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 12px 12px 0 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        .title {
+            font-size: 18px;
+            color: #e0d3e6;
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .profile-img {
+            width: 180px;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-top: 30px;
+            padding: 25px 30px;
+            border-left: 5px solid #b392ac;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-in-out;
+        }
+
+        section.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            color: #6d597a;
+            margin-bottom: 10px;
+            font-size: 24px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 6px;
+        }
+
+        ul.skill-tags li {
+            display: inline-block;
+            background-color: #eee2f0;
+            color: #5a3e5c;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 14px;
+        }
+
+        .btn-download {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #6d597a;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn-download:hover {
+            background-color: #b392ac;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #6d597a;
+            color: white;
+            font-size: 14px;
+            border-radius: 0 0 12px 12px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <header>
+            <h1>MUHAMMAD AIMAN BIN MOHD RUSLI</h1>
+            <p class="title">Aspiring Information Management Professional</p>
+        </header>
+
+        <section class="about">
+            
+            <h2><a href="about_me_assigment.html">About Me</a></h2>
+            <div class="about-container">
+                <img src="image/aiman_rusli.JPG" alt="Profile Picture" class="profile-img">
+                <p>
+                    Information Management Diploma graduate from UiTM Kelantan, passionate, dedicated, and skilled in data management and information technology.
+                </p>
+            </div>
+        </section>
+
+        <section class="education">
+            
+            <ul>
+                 <h2><a href="education.html">Academic background</a></h2>
+                <li><strong>Diploma in Information Management</strong> — UiTM Kelantan (2023-2025)</li>
+                <li><strong>Sijil Pelajaran Malaysia (SPM)</strong> — SMU(A) Bustanus Saadah (2016-2021)</li>
+            </ul>
+        </section>
+
+        <section class="experience">
+            
+            <h2><a href="work_experience.html">Career experience</a></h2>
+            <ul>
+            
+            </ul>
+        </section>
+
+        <section class="skills">
+            <h2>Skills</h2>
+            <ul class="skill-tags">
+                <li>Microsoft Office</li>
+                <li>Data Management</li>
+                <li>Communication</li>
+                <li>Teamwork</li>
+                <li>Basic HTML & CSS</li>
+                <li>Time Management</li>
+            </ul>
+        </section>
+
+        <section class="languages">
+            <h2>Languages</h2>
+            <ul>
+                <li>Malay (Native)</li>
+                <li>English (Professional Working Proficiency)</li>
+            </ul>
+        </section>
+
+        
+
+        <section class="contact">
+            <h2>Contact Details</h2>
+            <address>
+                <p>Email: <a href="mailto:muhdaimanrusli03@gmail.com">muhdaimanrusli03@gmail.com</a></p>
+                <p>Phone: <a href="tel:+601111005916">011-11005916</a></p>
+                <p>Location: Kota Bharu, Kelantan, Malaysia</p>
+            </address>
+        </section>
+
+        
+        <footer>
+            &copy; 2025 Muhammad Aiman. All rights reserved.
+        </footer>
+    </div>
+
+    <script>
+        const sections = document.querySelectorAll("section");
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("fade-in");
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
